@@ -45,9 +45,21 @@
                 'distance_to_center' => 50
             ],
         ];
+
+        $hasParking = $_GET['hotelParking'] ?? 'noParking';
     ?>
 </head>
 <body>
+    
+    <form>
+        <label for="hotelParking">Hotel Parking:</label>
+        <input type="checkbox" name="hotelParking">
+
+        <label for="noParking">No Parking:</label>
+        <input type="checkbox" name="noParking">
+
+        <input type="submit" value="VALIDATE">
+    </form>
 
     <table class="table table-dark table-hover w-75 my-5 mx-auto">
     <thead>
@@ -56,7 +68,7 @@
             foreach($hotels[0] as $key => $value) {
 
 
-                echo '<th scope="col">' . $key . '</th>';
+                echo '<th scope="col">' . ucfirst($key) . '</th>';
             }
         ?>
         </tr>
