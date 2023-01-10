@@ -48,5 +48,26 @@
 </head>
 <body>
     
+        <?php
+            
+            foreach($hotels as $hotel) {
+
+                $name = $hotel['name'];
+                $description = $hotel['description'];
+                $parking = $hotel['parking'];
+                $vote = $hotel['vote'];
+                $distance_to_center = $hotel['distance_to_center'];
+
+                echo '<div>' 
+                        . '<h1>' . $name . '</h1>'
+                        . '<h3>' . 'parcheggio:' . ' ' . $parking . '</h3>'
+                        . '<h3>' . 'voto:' . ' ' .$vote . '</h3>'
+                        . '<h3>' . 'distanza dal centro:' . ' ' . $distance_to_center . '</h3>' 
+                    . '</div>';
+
+            }
+        
+        ?>
+    
 </body>
 </html>
