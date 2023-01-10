@@ -48,27 +48,34 @@
     ?>
 </head>
 <body>
-    
+
+    <table class="table table-dark table-hover w-75 my-5 mx-auto">
+    <thead>
+        <tr>
+        <?php
+            foreach($hotels[0] as $key => $value) {
+
+
+                echo '<th scope="col">' . $key . '</th>';
+            }
+        ?>
+        </tr>
+    </thead>
+    <tbody>
         <?php
             
-            foreach($hotels as $hotel) {
+            foreach ($hotels as $hotel) {
 
-                $name = $hotel['name'];
-                $description = $hotel['description'];
-                $parking = $hotel['parking'];
-                $vote = $hotel['vote'];
-                $distance_to_center = $hotel['distance_to_center'];
+                echo '<tr></tr>';
 
-                echo '<div>' 
-                        . '<h1>' . $name . '</h1>'
-                        . '<h3>' . 'parcheggio:' . ' ' . $parking . '</h3>'
-                        . '<h3>' . 'voto:' . ' ' .$vote . '</h3>'
-                        . '<h3>' . 'distanza dal centro:' . ' ' . $distance_to_center . '</h3>' 
-                    . '</div>';
+                foreach ($hotel as $key => $value) {
 
+                    echo '<td>' . $value . '</td>';
+                }
             }
-        
         ?>
+    </tbody>
+    </table>
     
 </body>
 </html>
